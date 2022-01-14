@@ -37,45 +37,38 @@ func (c *Entry) copyWith(fields ...zap.Field) *Entry {
 }
 
 // Debug logs a message at DebugLevel
-func (c *Entry) Debug(msg string, args ...interface{}) Chain {
+func (c *Entry) Debug(msg string, args ...interface{}) {
 	c.Logger.Debug(prepare(msg, args...), c.getFields()...)
-	return c
 }
 
 // Info logs a message at InfoLevel
-func (c *Entry) Info(msg string, args ...interface{}) Chain {
+func (c *Entry) Info(msg string, args ...interface{}) {
 	c.Logger.Info(prepare(msg, args...), c.getFields()...)
-	return c
 }
 
 // Warn logs a message at WarnLevel
-func (c *Entry) Warn(msg string, args ...interface{}) Chain {
+func (c *Entry) Warn(msg string, args ...interface{}) {
 	c.Logger.Warn(prepare(msg, args...), c.getFields()...)
-	return c
 }
 
 // Error logs a message at ErrorLevel
-func (c *Entry) Error(msg string, args ...interface{}) Chain {
+func (c *Entry) Error(msg string, args ...interface{}) {
 	c.Logger.Error(prepare(msg, args...), c.getFields()...)
-	return c
 }
 
 // Fatal logs a message at FatalLevel
-func (c *Entry) Fatal(msg string, args ...interface{}) Chain {
+func (c *Entry) Fatal(msg string, args ...interface{}) {
 	c.Logger.Fatal(prepare(msg, args...), c.getFields()...)
-	return c
 }
 
 // Panic logs a message at PanicLevel
-func (c *Entry) Panic(msg string, args ...interface{}) Chain {
+func (c *Entry) Panic(msg string, args ...interface{}) {
 	c.Logger.Panic(prepare(msg, args...), c.getFields()...)
-	return c
 }
 
 // Warning logs a message at WarnLevel
-func (c *Entry) Warning(msg string, args ...interface{}) Chain {
+func (c *Entry) Warning(msg string, args ...interface{}) {
 	c.Logger.Warn(prepare(msg, args...), c.getFields()...)
-	return c
 }
 
 func prepare(msg string, args ...interface{}) string {

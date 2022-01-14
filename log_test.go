@@ -12,7 +12,7 @@ import (
 func TestWrapper(t *testing.T) {
 	Errorw("test")
 	Errorw("test2")
-	GetChain().WithString("test", "string").Error("result").Error("result")
+	GetChain().WithString("test", "string").Error("result")
 	GetChain().WithAny("test", struct {
 		Name    string
 		private string

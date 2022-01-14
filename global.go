@@ -100,38 +100,38 @@ func With(args ...interface{}) {
 }
 
 // Debug prints a debug message
-func Debug(message string, args ...interface{}) Chain {
-	return GetChain().Debug(prepare(message, args...))
+func Debug(message string, args ...interface{}) {
+	GetChain().Debug(prepare(message, args...))
 }
 
 // Info logs a message with some additional context
-func Info(message string, args ...interface{}) Chain {
-	return GetChain().Info(prepare(message, args...))
+func Info(message string, args ...interface{}) {
+	GetChain().Info(prepare(message, args...))
 }
 
 // Warn logs a message with some additional context
-func Warn(message string, args ...interface{}) Chain {
-	return GetChain().Warn(prepare(message, args...))
+func Warn(message string, args ...interface{}) {
+	GetChain().Warn(prepare(message, args...))
 }
 
 // Warning logs a message with some additional context
-func Warning(message string, args ...interface{}) Chain {
-	return GetChain().Warn(prepare(message, args...))
+func Warning(message string, args ...interface{}) {
+	GetChain().Warn(prepare(message, args...))
 }
 
 // Error logs a message with some additional context
-func Error(message string, args ...interface{}) Chain {
-	return GetChain().Error(prepare(message, args...))
+func Error(message string, args ...interface{}) {
+	GetChain().Error(prepare(message, args...))
 }
 
 // Panic logs a message with some additional context, then panics
-func Panic(message string, args ...interface{}) Chain {
-	return GetChain().Panic(prepare(message, args...))
+func Panic(message string, args ...interface{}) {
+	GetChain().Panic(prepare(message, args...))
 }
 
 // Fatal logs a message to stderr and then calls an os.Exit
-func Fatal(message string, args ...interface{}) Chain {
-	return GetChain().Fatal(prepare(message, args...))
+func Fatal(message string, args ...interface{}) {
+	GetChain().Fatal(prepare(message, args...))
 }
 
 // Debugw prints a debug message

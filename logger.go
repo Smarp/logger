@@ -20,13 +20,13 @@ type Log interface {
 // Chain context provide functionality for log with predefined values
 type Chain interface {
 	Copy() Chain
-	Debug(msg string, args ...interface{}) Chain
-	Info(msg string, args ...interface{}) Chain
-	Warn(msg string, args ...interface{}) Chain
-	Warning(msg string, args ...interface{}) Chain
-	Error(msg string, args ...interface{}) Chain
-	Fatal(msg string, args ...interface{}) Chain
-	Panic(msg string, args ...interface{}) Chain
+	Debug(msg string, args ...interface{})
+	Info(msg string, args ...interface{})
+	Warn(msg string, args ...interface{})
+	Warning(msg string, args ...interface{})
+	Error(msg string, args ...interface{})
+	Fatal(msg string, args ...interface{})
+	Panic(msg string, args ...interface{})
 
 	WithBinary(key string, val []byte) Chain
 	WithBool(key string, val bool) Chain
