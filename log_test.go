@@ -54,6 +54,7 @@ func TestLog(t *testing.T) {
 	Debugw("Test") // not logged
 	Errorw("Test")
 	Errorw("Test")
+	Warnw("Test")
 
 	file, err := os.Open("./log")
 	if err != nil {
@@ -66,6 +67,12 @@ func TestLog(t *testing.T) {
 		}
 	}()
 
+	severities := []string{
+		"ERROR",
+		"ERROR",
+		"WARNING",
+	}
+
 	scanner := bufio.NewScanner(file)
 	var i int
 	for scanner.Scan() {
@@ -74,11 +81,20 @@ func TestLog(t *testing.T) {
 		if err != nil {
 			t.Fatal(err)
 		}
+
+		if _, exist := d["severity"]; !exist {
+			t.Fatal("Not found severity")
+		}
+
+		if d["severity"] != severities[i] {
+			t.Fatal("Wrong severity", "i=", i, d["severity"], "!=", severities[i])
+		}
+
 		i++
 	}
 
-	if i != 2 {
-		t.Fatalf("error unexpected value: %d != %d", i, 2)
+	if i != 3 {
+		t.Fatalf("error unexpected value: %d != %d", i, 3)
 	}
 
 	err = scanner.Err()
