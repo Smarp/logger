@@ -18,23 +18,23 @@ type GoogleSeverity int
 
 func (l GoogleSeverity) String() string {
 	switch l {
-	case 0:
+	case GoogleSeverityDefault:
 		return "DEFAULT"
-	case 100:
+	case GoogleSeverityDebug:
 		return "DEBUG"
-	case 200:
+	case GoogleSeverityInfo:
 		return "INFO"
-	case 300:
+	case GoogleSeverityNotice:
 		return "NOTICE"
-	case 400:
+	case GoogleSeverityWarning:
 		return "WARNING"
-	case 500:
+	case GoogleSeverityError:
 		return "ERROR"
-	case 600:
+	case GoogleSeverityCritical:
 		return "CRITICAL"
-	case 700:
+	case GoogleSeverityAlert:
 		return "ALERT"
-	case 800:
+	case GoogleSeverityEmergency:
 		return "EMERGENCY"
 	}
 	return ""
