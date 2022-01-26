@@ -19,6 +19,9 @@ type WrappedLogger struct {
 func GetLoggerConfig() zap.Config {
 	zapConfig := zap.NewProductionConfig()
 	zapConfig.EncoderConfig.EncodeTime = zapcore.ISO8601TimeEncoder
+
+	zapConfig.EncoderConfig.LevelKey = "severity"
+	zapConfig.EncoderConfig.EncodeLevel = GoogleLevelEncoder
 	return zapConfig
 }
 
